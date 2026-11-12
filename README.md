@@ -18,7 +18,7 @@ HTTPS address is shared four ways: an **NFC tag**, a **QR code**, a **link**, an
 
 | Path | What it is |
 |---|---|
-| `index.html` | Main card: portrait card (front = identity, flip side = QR), full profile, office map, share sheet. Mobile-first, two columns on desktop. |
+| `index.html` | Main card: portrait card (front = identity, flip side = QR), full profile, Dhaka, Chattogram and Phnom Penh offices with directions, share sheet. Mobile-first, two columns on desktop. |
 | `card.html` | Landscape business card (3.5 × 2 in), front and back, printable. |
 | `nfc-setup.html` | Owner tool: shows the exact URL, writes/test-reads an NFC tag from Chrome on Android (Web NFC). |
 | `email-signature.html` | Copy-paste email signature (Gmail / Outlook). |

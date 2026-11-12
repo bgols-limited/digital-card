@@ -237,6 +237,11 @@ body.ready .loader { opacity: 0; visibility: hidden; }
 .map-load span { display: grid; gap: 2px; background: var(--surface); padding: 8px 14px; border-radius: 12px; }
 .map-load b { font-size: 14px; }
 .map-load small { font-size: 11.5px; color: var(--muted); }
+.office + .office, .map + .office { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+.office-city { margin: 0 0 6px; display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); }
+.office-city svg { width: 16px; height: 16px; }
+.office-city small { font-size: 11px; letter-spacing: .04em; text-transform: none; color: var(--muted); font-weight: 600; }
+.office .address { display: block; margin-bottom: 10px; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 10px; }
 .btn-row .btn { flex: 1 1 140px; }
 

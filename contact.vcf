@@ -13,8 +13,16 @@ item2.X-ABLabel:LinkedIn
 item3.URL:https://alshams8.github.io/digital-card/
 item3.X-ABLabel:Digital Business Card
 X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/abdullahalshams99
-ADR;TYPE=WORK:;;B&T NEHALEEYA TOWER\, Level-7\, Holding No. 80B\, Kemal Ata
- turk Avenue;Banani;Dhaka;1212;Bangladesh
+item4.ADR;TYPE=WORK,pref:;;B&T Nehaleeya Tower\, Level-7\, Holding No. 80B\
+ , Kemal Ataturk Avenue\, P.S. Banani;Dhaka;;1212;Bangladesh
+item4.X-ABLabel:Bangladesh Office (Dhaka)
+item5.ADR;TYPE=WORK:;;SHR Tower\, 2nd Floor\, 320\, Sheikh Mujib Road\, Agr
+ abad C/A;Chattogram;;4100;Bangladesh
+item5.X-ABLabel:Chattogram Office
+item6.ADR;TYPE=WORK:;;BG-EXPRESS (CAMBODIA) CO. LTD.\, Time Square-3\, Floo
+ r-12F\, Village-7\, Street 335-317\, Sangkat Boeng Kak\, Ti Muy\, Khan Tou
+ l Kork;Phnom Penh;;;Cambodia
+item6.X-ABLabel:Cambodia Office (Phnom Penh)
 NOTE:Air Freight Analyst\, B-GOLS Limited. Committed to Deliver. WhatsApp\,
   WeChat and Telegram on +8801335134471. Professional memberships: FMC | WC
  A | JC Trans | GLA | IFC | BAFFA.

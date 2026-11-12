@@ -1,6 +1,7 @@
 /* Service worker: makes the card open instantly and work offline.
    Bump VERSION whenever you change any file so phones fetch the update. */
-const VERSION = "card-v1";
+const PREFIX = "shams-card-";
+const VERSION = PREFIX + "v2";
 const CORE = [
   "./", "index.html", "card.html", "nfc-setup.html", "email-signature.html", "css/styles.css", "js/config.js", "js/app.js", "contact.vcf",
   "manifest.webmanifest",
@@ -17,7 +18,7 @@ self.addEventListener("install", (e) => {
 
 self.addEventListener("activate", (e) => {
   e.waitUntil(
-    caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== VERSION).map((k) => caches.delete(k))))
+    caches.keys().then((keys) => Promise.all(keys.filter((k) => k === "card-v1" || (k.startsWith(PREFIX) && k !== VERSION)).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
