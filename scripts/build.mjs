@@ -59,7 +59,7 @@ const lines = [
     esc("B&T Nehaleeya Tower, Level-7, Holding No. 80B, Kemal Ataturk Avenue, P.S. Banani"),
     esc("Dhaka"), "", esc("1213"), esc("Bangladesh")
   ].join(";"),
-  "item4.X-ABLabel:Bangladesh Office (Dhaka)",
+  "item4.X-ABLabel:Dhaka Office",
   "item5.ADR;TYPE=WORK:;;" + [
     esc("SHR Tower, 2nd Floor, 320, Sheikh Mujib Road, Agrabad C/A"),
     esc("Chattogram"), "", esc("4100"), esc("Bangladesh")
@@ -69,7 +69,7 @@ const lines = [
     esc("BG-EXPRESS (CAMBODIA) CO. LTD., Time Square-3, Floor-12F, Village-7, Street 335-317, Sangkat Boeng Kak, Ti Muy, Khan Toul Kork"),
     esc("Phnom Penh"), "", "", esc("Cambodia")
   ].join(";"),
-  "item6.X-ABLabel:Cambodia Office (Phnom Penh)",
+  "item6.X-ABLabel:Phnom Penh Office",
   "NOTE:" + esc("Air Freight Analyst, B-GOLS Limited. Committed to Deliver. WhatsApp, WeChat and Telegram on +8801335134471. Professional memberships: FMC | WCA | JC Trans | GLA | IFC | BAFFA."),
   "PHOTO;ENCODING=b;TYPE=JPEG:" + photo,
   "END:VCARD"
