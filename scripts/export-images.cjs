@@ -25,7 +25,7 @@ const OUT = path.join(__dirname, "..", "assets", "exports");
   // Portrait digital card, front and QR back, at 3x (phone-sharp)
   const ph = await browser.newPage({ viewport: { width: 412, height: 915 }, deviceScaleFactor: 3 });
   await ph.goto(BASE, { waitUntil: "networkidle" });
-  await ph.waitForTimeout(3500);
+  await ph.waitForTimeout(4500);
   await ph.locator(".card-front").screenshot({ path: path.join(OUT, "portrait-card-front.png") });
   await ph.click(".flip-toggle");
   await ph.waitForTimeout(1000);
