@@ -281,14 +281,14 @@ ul { padding: 0; list-style: none; }
 .toast.show { opacity: 1; transform: translate(-50%, 0); }
 .noscript { text-align: center; padding: 12px; font-size: 13px; }
 
+/* ---------- opening: logo fades in, then fades into the card ---------- */
+.intro { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; background: #fff; transition: opacity 1s ease, visibility 1s; }
+.intro img { width: min(70vw, 320px); height: auto; animation: intro-in 1.5s ease both; }
+@keyframes intro-in { from { opacity: 0; } to { opacity: 1; } }
+body.ready .intro { opacity: 0; visibility: hidden; }
+@media print { .intro { display: none; } }
+
 /* ---------- entrance ---------- */
-@media (prefers-reduced-motion: no-preference) {
-  /* Slow fade-in when the card opens */
-  .flip, .flip-toggle, .panel, .signature-block, .topbar { animation: fade 1.4s ease-out both; }
-  .panel:nth-child(2) { animation-delay: .1s; }
-  .panel:nth-child(3) { animation-delay: .2s; }
-  .panel:nth-child(4) { animation-delay: .3s; }
-}
 @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

@@ -11,7 +11,8 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
-  document.body.classList.add("ready");
+  // Opening: show the logo for about 2.5 s (0.3 s for #qr links), then fade into the card.
+  setTimeout(function () { document.body.classList.add("ready"); }, location.hash === "#qr" ? 300 : 2500);
 
   // ---------- profile URL text ----------
   $$("[data-profile-url]").forEach(function (el) { el.textContent = PROFILE_URL.replace(/^https?:\/\//, "").replace(/\/$/, ""); });
