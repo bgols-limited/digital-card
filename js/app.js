@@ -6,7 +6,7 @@
   var PROFILE_URL = cfg.PROFILE_URL || location.href.split("#")[0];
   var SHARE_TITLE = "Abdullah Al Shams | Air Freight Analyst | B-GOLS Limited";
   var SHARE_TEXT = "Abdullah Al Shams, Air Freight Analyst at B-GOLS Limited. View and save my contact:";
-  var MAP_QUERY = "B&T Nehaleeya Tower, Holding No. 80B, Kemal Ataturk Avenue, Banani, Dhaka-1212, Bangladesh";
+  var MAP_QUERY = "B&T Nehaleeya Tower, Holding No. 80B, Kemal Ataturk Avenue, Banani, Dhaka-1213, Bangladesh";
 
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
