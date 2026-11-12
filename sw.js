@@ -1,7 +1,7 @@
 /* Service worker: makes the card open instantly and work offline.
    Bump VERSION whenever you change any file so phones fetch the update. */
 const PREFIX = "shams-card-";
-const VERSION = PREFIX + "v8";
+const VERSION = PREFIX + "v9";
 const CORE = [
   "./", "index.html", "card.html", "nfc-setup.html", "email-signature.html", "css/styles.css", "js/config.js", "js/app.js", "contact.vcf",
   "manifest.webmanifest",

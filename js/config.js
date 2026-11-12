@@ -11,5 +11,5 @@
  *   https://card.bgols.com/abdullah/
  */
 window.CARD_CONFIG = {
-  PROFILE_URL: "https://alshams8.github.io/digital-card/"
+  PROFILE_URL: "https://bgols-limited.github.io/digital-card/"
 };

@@ -9,7 +9,7 @@ HTTPS address is shared four ways: an **NFC tag**, a **QR code**, a **link**, an
 **save the contact (.vcf)**. No app, login, tracking or data collection.
 
 > **Status:** the code is complete and tested in a headless browser. It is **not live yet**.
-> `js/config.js` holds a **placeholder** address (`https://alshams8.github.io/digital-card/`).
+> `js/config.js` holds a **placeholder** address (`https://bgols-limited.github.io/digital-card/`).
 > Host the folder, put the real address in `js/config.js`, run `node scripts/build.mjs`, then write the NFC tag.
 
 ---

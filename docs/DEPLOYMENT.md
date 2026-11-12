@@ -5,10 +5,10 @@ The card is a folder of static files. Any HTTPS static host works. The address y
 
 ## Option 1: GitHub Pages (free, fastest)
 
-1. Create a public repository on GitHub, e.g. `digital-card` (account `alshams8`).
+1. Create a public repository on GitHub, e.g. `digital-card` (account `bgols-limited`).
 2. Upload the contents of this folder (or `git push`). `node_modules/` is not needed.
 3. Repository → **Settings → Pages** → Source: *Deploy from a branch* → Branch `main`, folder `/ (root)` → Save.
-4. After ~1 minute the site is at `https://alshams8.github.io/digital-card/`. That is the placeholder
+4. After ~1 minute the site is at `https://bgols-limited.github.io/digital-card/`. That is the placeholder
    already in `js/config.js`, so if you use exactly this name nothing needs regenerating.
 5. Tick **Enforce HTTPS** (on by default for `github.io`).
 
@@ -26,7 +26,7 @@ It needs B-GOLS IT (whoever manages the `bgols.com` DNS):
 
 1. Host the folder on any of the options above, inside a sub-folder `abdullah/`
    (e.g. repository `card`, files in `abdullah/`).
-2. DNS: add a **CNAME** record `card` → `alshams8.github.io` (GitHub) or the Netlify/Cloudflare target.
+2. DNS: add a **CNAME** record `card` → `bgols-limited.github.io` (GitHub) or the Netlify/Cloudflare target.
 3. GitHub Pages: Settings → Pages → *Custom domain* `card.bgols.com` → wait for the certificate → *Enforce HTTPS*.
 4. Open `https://card.bgols.com/abdullah/` in a browser and check the padlock **before** writing tags.
 5. Set `PROFILE_URL` to `https://card.bgols.com/abdullah/`, run the build, redeploy.
