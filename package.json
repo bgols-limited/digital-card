@@ -1,0 +1,14 @@
+{
+  "name": "abdullah-al-shams-digital-card",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NFC / QR digital business card PWA for Abdullah Al Shams, B-GOLS Limited",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "serve": "npx --yes serve@14.2.4 -l 8080 ."
+  },
+  "devDependencies": {
+    "qrcode": "1.5.4"
+  }
+}

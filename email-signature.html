@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Email Signature | Abdullah Al Shams</title>
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/icons/favicon-48.png">
+  <style>
+    body { margin: 0; padding: 24px 16px 48px; background: #F1F4F8; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #263447; }
+    main { max-width: 640px; margin: 0 auto; display: grid; gap: 16px; }
+    h1 { font-size: 18px; color: #182954; margin: 0; }
+    p { margin: 0; font-size: 14px; }
+    .box { background: #fff; border-radius: 16px; padding: 24px; overflow-x: auto; }
+    button { font: inherit; font-weight: 700; border: 0; border-radius: 12px; min-height: 46px; padding: 0 18px; background: #F47820; color: #182954; cursor: pointer; }
+    #msg { font-weight: 600; color: #11733A; min-height: 1.4em; }
+    a.back { color: #182954; font-weight: 700; text-decoration: none; font-size: 14px; }
+  </style>
+</head>
+<body>
+<main>
+  <a class="back" href="./">‹ Back to the card</a>
+  <h1>Email signature</h1>
+  <p>Open this page from the live (hosted) address, tap <b>Copy signature</b>, then paste it into Gmail › Settings › Signature, or Outlook › Signatures.</p>
+  <div class="box">
+    <!-- Table layout and inline styles: the format email clients render reliably -->
+    <div id="sig">
+      <table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;color:#263447;border-collapse:collapse;">
+        <tr>
+          <td style="padding:0 16px 0 0;vertical-align:top;">
+            <img src="assets/img/portrait-320.jpg" width="84" height="84" alt="Abdullah Al Shams" style="display:block;border-radius:42px;width:84px;height:84px;">
+          </td>
+          <td style="padding:0 0 0 16px;border-left:2px solid #F47820;vertical-align:top;">
+            <div style="font-size:16px;font-weight:bold;letter-spacing:1px;color:#182954;">ABDULLAH AL SHAMS</div>
+            <div style="font-size:12px;font-weight:bold;letter-spacing:1px;color:#263447;padding-top:2px;">AIR FREIGHT ANALYST</div>
+            <div style="font-size:12px;color:#182954;padding-top:2px;">B-GOLS LIMITED</div>
+            <div style="font-size:12px;line-height:19px;padding-top:8px;">
+              <a href="tel:+8801335134471" style="color:#263447;text-decoration:none;">+8801335134471</a><br>
+              <a href="mailto:alshams@bgols.com" style="color:#263447;text-decoration:none;">alshams@bgols.com</a><br>
+              <a href="https://www.bgols.com/" style="color:#182954;text-decoration:none;font-weight:bold;">www.bgols.com</a>
+              &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/abdullahalshams99" style="color:#182954;text-decoration:none;font-weight:bold;">LinkedIn</a>
+              &nbsp;·&nbsp; <a id="cardLink" href="./" style="color:#C2570C;text-decoration:none;font-weight:bold;">Digital Card</a>
+            </div>
+            <img src="assets/img/bgols-logo-600.png" width="120" height="36" alt="B-GOLS Limited" style="display:block;width:120px;height:auto;padding-top:10px;">
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <button type="button" id="copy">Copy signature</button>
+  <p id="msg" role="status"></p>
+</main>
+<script src="js/config.js"></script>
+<script>
+  var url = window.CARD_CONFIG && window.CARD_CONFIG.PROFILE_URL;
+  if (url) document.getElementById("cardLink").href = url;
+  // Make every image an absolute address so it still shows after pasting into an email client.
+  Array.prototype.forEach.call(document.querySelectorAll("#sig img"), function (img) { img.src = img.src; });
+  document.getElementById("copy").onclick = function () {
+    var r = document.createRange(); r.selectNode(document.getElementById("sig"));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    var ok = false; try { ok = document.execCommand("copy"); } catch (e) {}
+    s.removeAllRanges();
+    document.getElementById("msg").textContent = ok ? "Copied. Paste it into your email signature settings." : "Select the signature above and copy it manually.";
+  };
+</script>
+</body>
+</html>
