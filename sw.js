@@ -1,11 +1,11 @@
 /* Service worker: makes the card open instantly and work offline.
    Bump VERSION whenever you change any file so phones fetch the update. */
 const PREFIX = "shams-card-";
-const VERSION = PREFIX + "v4";
+const VERSION = PREFIX + "v5";
 const CORE = [
   "./", "index.html", "card.html", "nfc-setup.html", "email-signature.html", "css/styles.css", "js/config.js", "js/app.js", "contact.vcf",
   "manifest.webmanifest",
-  "assets/img/bgols-logo-600.webp", "assets/img/portrait-320.webp", "assets/img/portrait-640.webp", "assets/img/portrait-640.jpg",
+  "assets/img/bgols-logo-600.webp", "assets/img/intro-mark.webp", "assets/img/intro-tagline.webp", "assets/img/portrait-320.webp", "assets/img/portrait-640.webp", "assets/img/portrait-640.jpg",
   "assets/qr/profile-qr.svg", "assets/qr/profile-qr.png",
   "assets/fonts/manrope-latin-400-normal.woff2", "assets/fonts/manrope-latin-500-normal.woff2",
   "assets/fonts/manrope-latin-600-normal.woff2", "assets/fonts/manrope-latin-700-normal.woff2",

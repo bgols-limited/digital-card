@@ -12,9 +12,15 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
   // ---------- loader ----------
+  // Opening animation: keep the B-GOLS intro up for about 2.5 s (shorter for #qr links and reduced motion),
+  // then reveal the card once the page has loaded. Never longer than 4 s, even on a slow network.
+  var quick = location.hash === "#qr" || (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+  var introDone = false, pageLoaded = document.readyState === "complete";
   function ready() { document.body.classList.add("ready"); }
-  if (document.readyState === "complete") ready(); else window.addEventListener("load", ready);
-  setTimeout(ready, 2500); // never keep the loader up on a slow network
+  function check() { if (introDone && pageLoaded) ready(); }
+  setTimeout(function () { introDone = true; check(); }, quick ? 600 : 2500);
+  if (!pageLoaded) window.addEventListener("load", function () { pageLoaded = true; check(); });
+  setTimeout(ready, 4000);
 
   // ---------- profile URL text ----------
   $$("[data-profile-url]").forEach(function (el) { el.textContent = PROFILE_URL.replace(/^https?:\/\//, "").replace(/\/$/, ""); });

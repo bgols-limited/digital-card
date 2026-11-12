@@ -88,11 +88,18 @@ ul { padding: 0; list-style: none; }
   position: fixed; inset: 0; z-index: 50; display: grid; place-content: center; justify-items: center; gap: 18px;
   background: var(--white); transition: opacity .45s ease, visibility .45s;
 }
-.loader img { width: 180px; height: auto; }
-.loader-bar { width: 120px; height: 3px; border-radius: 3px; background: var(--soft-blue); overflow: hidden; position: relative; }
-.loader-bar::after { content: ""; position: absolute; inset: 0; width: 40%; background: var(--orange); border-radius: 3px; animation: load 1s ease-in-out infinite; }
-@keyframes load { from { transform: translateX(-100%); } to { transform: translateX(260%); } }
+/* Opening animation (about 2.5 s): logo rises in, tagline wipes in, orange line sweeps, then the card fades up */
+.intro-logo { position: relative; width: min(72vw, 340px); display: grid; transition: transform .5s ease; }
+.intro-logo picture, .intro-logo img { display: block; width: 100%; height: auto; }
+.intro-mark { animation: intro-mark .9s cubic-bezier(.2, .8, .2, 1) .1s both; }
+.intro-tag { animation: intro-tag .8s cubic-bezier(.3, .7, .2, 1) .85s both; }
+.intro-line { display: block; height: 3px; margin: 14px auto 0; width: 46%; border-radius: 3px; background: var(--orange);
+  transform: scaleX(0); animation: intro-line .7s cubic-bezier(.3, .7, .2, 1) 1.35s both; }
+@keyframes intro-mark { from { opacity: 0; transform: translateY(16px) scale(.94); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes intro-tag { from { opacity: 0; clip-path: inset(0 100% 0 0); } to { opacity: 1; clip-path: inset(0 0 0 0); } }
+@keyframes intro-line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 body.ready .loader { opacity: 0; visibility: hidden; }
+body.ready .intro-logo { transform: scale(1.06); }
 
 /* ---------- top bar ---------- */
 .topbar {
