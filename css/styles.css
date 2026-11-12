@@ -83,26 +83,6 @@ ul { padding: 0; list-style: none; }
 .sep { display: inline-block; width: 1.5px; height: .9em; margin: 0 .45em; vertical-align: -.1em; background: var(--orange); border-radius: 1px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* ---------- loader ---------- */
-.loader {
-  position: fixed; inset: 0; z-index: 50; display: grid; place-content: center; justify-items: center; gap: 18px;
-  background: var(--white); transition: opacity .45s ease, visibility .45s;
-}
-/* Opening animation: logo fades in over 3 s, white flash, then the card pops up */
-.loader { background: radial-gradient(circle at 50% 45%, #fff 0%, #f3f5f9 60%, #e6eaf2 100%); }
-.loader::after { content: ""; position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
-.intro-logo { position: relative; width: min(72vw, 340px); display: grid; }
-.intro-logo picture, .intro-logo img { display: block; width: 100%; height: auto; }
-.intro-mark { animation: intro-fade 2.4s ease-out .1s both; }
-.intro-tag { animation: intro-fade 1.6s ease-out 1.2s both; }
-.intro-line { display: block; height: 3px; margin: 14px auto 0; width: 46%; border-radius: 3px; background: var(--orange);
-  transform: scaleX(0); animation: intro-line .9s cubic-bezier(.3, .7, .2, 1) 2.1s both; }
-@keyframes intro-fade { from { opacity: 0; transform: scale(.96); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
-@keyframes intro-line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-body.flash .loader::after { animation: intro-flash .5s ease-out both; }
-body.flash .intro-logo { transition: transform .3s ease-in, opacity .3s ease-in; transform: scale(1.12); opacity: 0; }
-@keyframes intro-flash { 0% { opacity: 0; } 35% { opacity: 1; } 100% { opacity: 1; } }
-body.ready .loader { opacity: 0; visibility: hidden; }
 
 /* ---------- top bar ---------- */
 .topbar {
@@ -303,14 +283,13 @@ body.ready .loader { opacity: 0; visibility: hidden; }
 
 /* ---------- entrance ---------- */
 @media (prefers-reduced-motion: no-preference) {
-  body.ready .flip, body.ready .panel, body.ready .signature-block { animation: fade .6s ease both; }
-  body.ready .panel:nth-child(2) { animation-delay: .06s; }
-  body.ready .panel:nth-child(3) { animation-delay: .12s; }
-  body.ready .panel:nth-child(4) { animation-delay: .18s; }
-  body.ready .flip { animation: pop .7s cubic-bezier(.18, 1.4, .4, 1) both; }
+  /* Slow fade-in when the card opens */
+  .flip, .flip-toggle, .panel, .signature-block, .topbar { animation: fade 1.4s ease-out both; }
+  .panel:nth-child(2) { animation-delay: .1s; }
+  .panel:nth-child(3) { animation-delay: .2s; }
+  .panel:nth-child(4) { animation-delay: .3s; }
 }
-@keyframes fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-@keyframes pop { from { opacity: 0; transform: scale(.82); } 60% { opacity: 1; } to { opacity: 1; transform: none; } }
+@keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
@@ -324,6 +303,6 @@ body.ready .loader { opacity: 0; visibility: hidden; }
 }
 
 @media print {
-  .topbar, .loader, .flip-toggle, .profile-col .btn, .map, .toast { display: none !important; }
+  .topbar, .flip-toggle, .profile-col .btn, .map, .toast { display: none !important; }
   body { background: #fff; }
 }

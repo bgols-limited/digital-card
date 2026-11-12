@@ -11,22 +11,7 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
-  // ---------- loader ----------
-  // Opening animation: logo fades in for 3 s, then a white flash and the card pops up.
-  // #qr links and reduced-motion users get a short version. Never longer than 5 s, even on a slow network.
-  var quick = location.hash === "#qr" || (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
-  var introDone = false, pageLoaded = document.readyState === "complete", finished = false;
-  function ready() { document.body.classList.add("ready"); }
-  function finish() {
-    if (finished) return; finished = true;
-    if (quick) { ready(); return; }
-    document.body.classList.add("flash");
-    setTimeout(ready, 220);
-  }
-  function check() { if (introDone && pageLoaded) finish(); }
-  setTimeout(function () { introDone = true; check(); }, quick ? 600 : 3000);
-  if (!pageLoaded) window.addEventListener("load", function () { pageLoaded = true; check(); });
-  setTimeout(finish, 5000);
+  document.body.classList.add("ready");
 
   // ---------- profile URL text ----------
   $$("[data-profile-url]").forEach(function (el) { el.textContent = PROFILE_URL.replace(/^https?:\/\//, "").replace(/\/$/, ""); });
